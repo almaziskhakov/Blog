@@ -1,0 +1,24 @@
+p#notice =notice
+
+h1 Listing Posts
+.row
+  .small-6.centered.columns
+    table
+      thead
+        tr
+          th Title
+          th Text
+          th Date and time
+          th colspan="3"
+
+      tbody
+        - @posts.each do |post|
+          tr
+            td = link_to post.title, post
+            td = post.text
+            td = post.created_at
+            td = link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+
+    br
+
+    = link_to 'New Post', new_post_path
