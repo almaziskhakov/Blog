@@ -8,6 +8,7 @@ h1 Listing Posts
         tr
           th Title
           th Text
+          th Comments number
           th Date and time
           th colspan="3"
 
@@ -16,7 +17,8 @@ h1 Listing Posts
           tr
             td = link_to post.title, post
             td = post.text
-            td = post.created_at
+            td = post.comments.length
+            td = post.created_at.strftime("%T, %d, %b, %Y")
             td = link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
 
     br

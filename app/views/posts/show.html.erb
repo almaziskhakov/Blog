@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<h3>Post</h3>
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
@@ -9,8 +9,9 @@
   <strong>Text:</strong>
   <%= @post.text %>
 </p>
-
-<h2>Comments</h2>
+<hr>
+<h5>Comments:</h5>
+<hr>
 <div class="comments">
     <% @post.comments.each do |comment| %>
         <%= render comment %>
